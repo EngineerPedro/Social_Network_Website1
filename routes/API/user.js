@@ -60,13 +60,13 @@ router.post(
       //Return jsonwebtoken
       const payload = {
         user: {
-          id: user.id
+          id: user._id
         }
       };
       jwt.sign(
         payload,
         config.get("jwtsecret"),
-        { expiresIn: 6000000000 },
+        //{ expiresIn: 6000000000 },
         (err, token) => {
           if (err) throw err;
           res.json({ token });
